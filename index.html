@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<base href="/emre-akcinar-randevu/">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'; connect-src 'self' https://emre-akcinar-studio.emre-akcinar-cloud.workers.dev; object-src 'none'; base-uri 'self'; form-action 'self'">
+<script src="app-config.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emre Akçınar Hair Studio</title><link rel="icon" href="assets/ea-app-icon.svg" type="image/svg+xml"><script src="vendor/react.production.min.js"></script><script src="vendor/react-dom.production.min.js"></script><script src="customer.js"></script><script src="vendor/dc-runtime.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F6F1EA">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Randevu">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="apple-touch-icon" href="assets/ea-icon-180.png">
+  <link rel="manifest" href="manifest-musteri.webmanifest">
+  <link rel="stylesheet" href="_ds/mimari-kurs-design-system-cc68b656-598c-42da-a0a9-2e2e95f72367/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/mimari-kurs-design-system-cc68b656-598c-42da-a0a9-2e2e95f72367/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/mimari-kurs-design-system-cc68b656-598c-42da-a0a9-2e2e95f72367/tokens/spacing.css">
+  <style>
+    html,body{margin:0;background:#F6F1EA;color:#1F2A2E;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:hidden}
+    *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+    button,a,label,input,textarea{touch-action:manipulation}
+    img{max-width:100%}
+    a{color:#3F6B5E}a:hover{color:#335A4F}
+    button,input,textarea{font:inherit;color:inherit}
+    :focus-visible{outline:2px solid #3F6B5E;outline-offset:2px}
+    ::placeholder{color:#8C9395}
+    @keyframes ea-spin{to{transform:rotate(360deg)}}
+    @media (prefers-reduced-motion: reduce){*{transition:none!important;animation-duration:0s!important;scroll-behavior:auto!important}}
+  </style>
+</helmet>
+
+<div lang="tr" style="min-height:100dvh;background:radial-gradient(120% 50% at 50% 0%, rgba(185,133,90,.10), transparent 60%), #F6F1EA;font-family:var(--mk-font-sans);display:flex;justify-content:center;color:#1F2A2E;padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)">
+  <div style="width:100%;max-width:{{ colMax }};min-height:100dvh;display:flex;flex-direction:column;border-left:{{ frameBorder }};border-right:{{ frameBorder }}">
+
+    <header style="position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:10px;padding:10px 16px;padding-top:max(10px, env(safe-area-inset-top));min-height:64px;background:rgba(246,241,234,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(31,42,46,.12)">
+      <sc-if value="{{ canBack }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ back }}" aria-label="Geri" style="width:44px;height:44px;margin-left:-8px;display:grid;place-items:center;background:none;border:0;border-radius:999px;cursor:pointer;color:#1F2A2E" style-hover="background:#EFE8DE"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6"></path></svg></button>
+      </sc-if>
+      <div style="flex:1;min-width:0;display:flex;align-items:center;gap:10px">
+        <img src="assets/ea-monogram.svg" alt="" style="width:32px;height:32px;flex:none">
+        <div style="display:flex;flex-direction:column;line-height:1;min-width:0">
+          <span style="font-family:var(--mk-font-display);font-weight:600;font-size:17px;letter-spacing:.02em;color:#1F2A2E;white-space:nowrap">EMRE AKÇINAR</span>
+          <span style="font-family:var(--mk-font-mono);font-size:10px;letter-spacing:.24em;color:#6B7275;margin-top:4px">HAIR STUDIO</span>
+        </div>
+      </div>
+      <sc-if value="{{ showProgress }}" hint-placeholder-val="{{ true }}">
+        <div aria-label="{{ progressAria }}" style="display:flex;flex-direction:column;align-items:flex-end;gap:6px">
+          <span style="font-family:var(--mk-font-mono);font-size:11px;letter-spacing:.12em;color:#5B6467;white-space:nowrap">{{ stepNum }} / 3</span>
+          <div style="display:flex;gap:4px"><span style="width:16px;height:3px;border-radius:2px;background:{{ p1 }}"></span><span style="width:16px;height:3px;border-radius:2px;background:{{ p2 }}"></span><span style="width:16px;height:3px;border-radius:2px;background:{{ p3 }}"></span></div>
+        </div>
+      </sc-if>
+    </header>
+
+    <div style="flex:1;display:grid;grid-template-columns:{{ gridCols }};gap:40px;align-items:start;padding:{{ gridPad }}">
+      <main style="min-width:0;width:100%;max-width:{{ mainMax }};margin:0 auto">
+
+        <sc-if value="{{ isHizmet }}" hint-placeholder-val="{{ true }}">
+          <section style="display:flex;flex-direction:column;gap:28px;padding:24px 20px 32px">
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <span style="font-family:var(--mk-font-mono);font-size:11px;letter-spacing:.16em;color:#3F6B5E">ADIM 1 · HİZMET VE PERSONEL</span>
+              <h1 style="margin:0;font-family:var(--mk-font-display);font-weight:600;font-size:32px;line-height:1.08;color:#1F2A2E;text-wrap:balance">NE YAPTIRMAK İSTERSİNİZ?</h1>
+              <p style="margin:0;font-size:15px;line-height:1.55;color:#5B6467">Birden fazla hizmet seçebilirsiniz; toplam süre ve ücret altta güncellenir.</p>
+            </div>
+            <div role="group" aria-label="Hizmetler" style="display:flex;flex-direction:column;gap:10px">
+              <sc-for list="{{ services }}" as="s" hint-placeholder-count="3">
+                <button onClick="{{ s.toggle }}" aria-pressed="{{ s.sel }}" style="width:100%;display:flex;align-items:center;gap:14px;min-height:64px;padding:12px 16px;border-radius:14px;border:1.5px solid {{ s.border }};background:{{ s.bg }};cursor:pointer;text-align:left;transition:border-color .18s, background .18s">
+                  <span style="width:22px;height:22px;border-radius:6px;border:1.5px solid {{ s.boxBorder }};background:{{ s.boxBg }};display:grid;place-items:center;flex:none;color:#fff"><sc-if value="{{ s.sel }}" hint-placeholder-val="{{ false }}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></sc-if></span>
+                  <span aria-hidden="true" style="width:64px;height:64px;flex:none;border-radius:14px;overflow:hidden;background:{{ s.tileBg }};transition:background .18s">
+                    <svg width="64" height="64" viewBox="5 7 56 57" preserveAspectRatio="xMidYMax meet" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M25 47V55C18 56 12.5 59 10.5 64H53.5C51.5 59 46 56 39 55V47Z" fill="#DCD4C7" stroke="#1F2A2E" strokeWidth="1.4"></path>
+                      <ellipse cx="17.6" cy="35" rx="2.6" ry="4.2" fill="#FFFDF9" stroke="#1F2A2E" strokeWidth="1.4"></ellipse>
+                      <ellipse cx="46.4" cy="35" rx="2.6" ry="4.2" fill="#FFFDF9" stroke="#1F2A2E" strokeWidth="1.4"></ellipse>
+                      <ellipse cx="32" cy="34" rx="14" ry="17" fill="#FFFDF9" stroke="#1F2A2E" strokeWidth="1.4"></ellipse>
+                      <path d="M26 31.5h3.2M34.8 31.5H38M32 33.5v3.5" stroke="#1F2A2E" strokeWidth="1.4"></path>
+                      <path d="M17 32C16 18 23 10.5 32 10.5S48 18 47 32C45.5 26.5 42.5 23.2 38.5 22C33.5 24.4 26.5 24.4 22 22.2C19.4 24.2 17.8 27.6 17 32Z" fill="{{ s.hairFill }}" stroke="{{ s.hairStroke }}" strokeWidth="1.4" strokeDasharray="{{ s.hairDash }}"></path>
+                      <path d="M18.4 36.5C19 47.5 25 54.5 32 54.5S45 47.5 45.6 36.5C44.2 41.2 41.4 43.2 38.2 43C36.2 41.2 34 40.6 32 41.6C30 40.6 27.8 41.2 25.8 43C22.6 43.2 19.8 41.2 18.4 36.5Z" fill="{{ s.beardFill }}" stroke="{{ s.beardStroke }}" strokeWidth="1.4" strokeDasharray="{{ s.beardDash }}"></path>
+                      <path d="M29.4 45.6Q32 46.9 34.6 45.6" stroke="{{ s.mouth }}" strokeWidth="1.4"></path>
+                    </svg>
+                  </span>
+                  <span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:3px"><span style="font-size:16px;font-weight:500;color:#1F2A2E">{{ s.name }}</span><span style="font-family:var(--mk-font-mono);font-size:12px;color:#6B7275">{{ s.durLabel }}</span></span>
+                  <span style="font-family:var(--mk-font-mono);font-size:14px;color:#1F2A2E;white-space:nowrap">{{ s.priceLabel }}</span>
+                </button>
+              </sc-for>
+              <p style="margin:2px 0 0;font-size:12px;line-height:1.5;color:#6B7275">Süre ve ücretler tasarım örneğidir; kesin değerleri stüdyo belirler.</p>
+            </div>
+            <div role="radiogroup" aria-label="Personel" style="display:flex;flex-direction:column;gap:12px">
+              <span style="font-family:var(--mk-font-mono);font-size:11px;letter-spacing:.16em;color:#5B6467">KİMİNLE?</span>
+              <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px">
+                <sc-for list="{{ staffList }}" as="p" hint-placeholder-count="2">
+                  <button role="radio" aria-checked="{{ p.sel }}" onClick="{{ p.pick }}" style="min-height:120px;padding:14px;border-radius:14px;border:1.5px solid {{ p.border }};background:{{ p.bg }};display:flex;flex-direction:column;align-items:flex-start;gap:8px;cursor:pointer;text-align:left;transition:border-color .18s, background .18s">
+                    <sc-if value="{{ p.hasPhoto }}" hint-placeholder-val="{{ false }}"><img src="assets/emre-akcinar.jpg" alt="{{ p.name }}" style="width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:50% 35%;border:2px solid {{ p.ring }};box-shadow:0 0 0 2px #FFFDF9"></sc-if>
+                    <sc-if value="{{ p.noPhoto }}" hint-placeholder-val="{{ true }}"><span style="width:56px;height:56px;border-radius:50%;background:{{ p.avBg }};color:{{ p.avFg }};display:grid;place-items:center;font-family:var(--mk-font-display);font-weight:600;font-size:22px">{{ p.initial }}</span></sc-if>
+                    <span style="font-size:16px;font-weight:600;color:#1F2A2E">{{ p.name }}</span>
+                    <span style="font-family:var(--mk-font-mono);font-size:11px;letter-spacing:.04em;color:#5B6467">{{ p.next }}</span>
+                  </button>
+                </sc-for>
+              </div>
+            </div>
+          </section>
+        </sc-if>
+
+        <sc-if value="{{ isZaman }}" hint-placeholder-val="{{ false }}">
+          <section style="display:flex;flex-direction:column;gap:20px;padding:24px 0 32px">
+            <div style="display:flex;flex-direction:column;gap:10px;padding:0 20px">
+              <span style="font-family:var(--mk-font-mono);font-size:11px;letter-spacing:.16em;color:#3F6B5E">ADIM 2 · GÜN VE SAAT</span>
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+                <h1 aria-live="polite" style="margin:0;font-weight:600;font-size:24px;line-height:1.2;color:#1F2A2E">{{ dayTitle }}</h1>
+                <button onClick="{{ openCal }}" aria-haspopup="dialog" style="min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid rgba(31,42,46,.22);background:#FFFDF9;display:flex;align-items:center;gap:8px;color:#1F2A2E;cursor:pointer;font-size:14px;font-weight:500" style-hover="border-color:#3F6B5E"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>Takvim</button>
+              </div>
+            </div>
+
+            <sc-if value="{{ bTaken }}" hint-placeholder-val="{{ false }}">
+              <div role="alert" style="margin:0 20px;padding:14px 16px;border-radius:14px;background:#FBF1DF;border:1.5px dashed #C99A4A;display:flex;flex-direction:column;gap:10px">
+                <span style="font-size:15px;font-weight:600;color:#1F2A2E">{{ takenLabel }} az önce başka bir talep için ayrıldı.</span>
+                <span style="font-size:14px;line-height:1.5;color:#3A4549">Hizmet ve bilgileriniz duruyor. Yakın saatlerden birini seçebilirsiniz.</span>
+                <div style="display:flex;flex-wrap:wrap;gap:8px">
+                  <sc-for list="{{ alts }}" as="a" hint-placeholder-count="3">
+                    <button onClick="{{ a.pick }}" style="min-height:44px;padding:0 14px;border-radius:999px;border:1.5px solid rgba(31,42,46,.22);background:#FFFDF9;font-family:var(--mk-font-mono);font-size:14px;color:#1F2A2E;cursor:pointer">{{ a.label }}</button>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ bReset }}" hint-placeholder-val="{{ false }}">
+              <div role="status" style="margin:0 20px;padding:12px 16px;border-radius:14px;background:#FFFDF9;border:1px solid rgba(31,42,46,.22);font-size:14px;line-height:1.5;color:#3A4549">Önceki seçiminiz ({{ resetLabel }}) yeni hizmet süresine veya personele uymuyor. Lütfen yeniden saat seçin.</div>
+            </sc-if>
+
+            <div role="listbox" aria-label="Yakın günler" style="display:flex;gap:8px;overflow-x:auto;padding:2px 20px 6px;scroll-snap-type:x proximity;scroll-padding-inline:20px;scrollbar-width:none">
+              <sc-for list="{{ days }}" as="d" hint-placeholder-count="7">
+                <button role="option" aria-selected="{{ d.sel }}" aria-label="{{ d.aria }}" disabled="{{ d.disabled }}" onClick="{{ d.pick }}" style="flex:none;width:68px;min-height:92px;padding:10px 4px;border-radius:14px;border:1.5px {{ d.bs }} {{ d.bc }};background:{{ d.bg }};opacity:{{ d.op }};display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;cursor:{{ d.cur }};scroll-snap-align:start;transition:background .18s, border-color .18s">
+                  <span style="font-family:var(--mk-font-mono);font-size:11px;letter-spacing:.06em;color:{{ d.c2 }}">{{ d.dow }}</span>
+                  <span style="font-family:var(--mk-font-display);font-weight:500;font-size:26px;line-height:1.1;color:{{ d.c1 }};text-decoration:{{ d.deco }}">{{ d.num }}</span>
+                  <span style="font-size:11px;font-weight:{{ d.sw }};color:{{ d.c3 }};white-space:nowrap">{{ d.status }}</span>
+                </button>
+              </sc-for>
+            </div>
+
+            <div style="padding:0 20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+              <span id="ea-staff-l" style="font-size:14px;color:#5B6467">Personel</span>
+              <div role="radiogroup" aria-labelledby="ea-staff-l" style="display:flex;padding:3px;border-radius:999px;background:#EFE8DE">
+                <sc-for list="{{ staffList }}" as="p" hint-placeholder-count="2">
+                  <button role="radio" aria-checked="{{ p.sel }}" onClick="{{ p.pick }}" style="min-height:40px;min-width:76px;padding:0 16px;border-radius:999px;border:0;background:{{ p.segBg }};color:{{ p.segFg }};box-shadow:{{ p.segSh }};font-size:14px;font-weight:500;cursor:pointer">{{ p.short }}</button>
+                </sc-for>
+              </div>
+            </div>
+
+            <sc-if value="{{ showDay }}" hint-placeholder-val="{{ true }}">
+              <div style="padding:0 20px;display:flex;flex-direction:column;gap:8px">
+                <div role="img" aria-label="{{ barAria }}" style="position:relative;height:28px;border-radius:8px;background:#FFFDF9;overflow:hidden;border:1px solid rgba(31,42,46,.16)">
+                  <sc-for list="{{ barSegs }}" as="g" hint-placeholder-count="4">
+                    <span style="position:absolute;top:0;bottom:0;left:{{ g.l }}%;width:{{ g.w }}%;background:{{ g.bg }}"></span>
+                  </sc-for>
+                </div>
+                <div aria-hidden="true" style="display:flex;justify-content:space-between;font-family:var(--mk-font-mono);font-size:10px;color:#6B7275"><span>09</span><span>11</span><span>13</span><span>15</span><span>17</span><span>19</span></div>
+                <div style="display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:#3A4549">
+                  <span style="display:flex;align-items:center;gap:6px"><span style="width:12px;height:12px;border-radius:3px;background:#FFFDF9;border:1px solid rgba(31,42,46,.22)"></span>Açık</span>
+                  <span style="display:flex;align-items:center;gap:6px"><span style="width:12px;height:12px;border-radius:3px;background:repeating-linear-gradient(135deg,#C44536 0 2px,#F3D3CE 2px 5px)"></span><strong style="color:#8E2F26;font-weight:600">Dolu</strong></span>
+                  <span style="display:flex;align-items:center;gap:6px"><span style="width:12px;height:12px;border-radius:3px;background:rgba(185,133,90,.4)"></span>Mola</span>
+                  <span style="display:flex;align-items:center;gap:6px"><span style="width:12px;height:12px;border-radius:3px;background:#DCD4C7"></span>Kapalı</span>
+                  <span style="display:flex;align-items:center;gap:6px"><span style="width:12px;height:12px;border-radius:3px;background:#3F6B5E"></span>Seçiminiz</span>
+                </div>
+              </div>
+            </sc-if>
+
+            <div style="padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+              <span aria-live="polite" style="font-size:14px;color:#1F2A2E">{{ countLabel }}</span>
+              <div role="tablist" aria-label="Görünüm" style="display:flex;padding:3px;border-radius:999px;background:#EFE8DE">
+                <button role="tab" aria-selected="{{ isList }}" onClick="{{ setList }}" style="min-height:40px;padding:0 14px;border-radius:999px;border:0;background:{{ tabListBg }};color:#1F2A2E;box-shadow:{{ tabListSh }};font-size:13px;font-weight:500;cursor:pointer">Liste</button>
+                <button role="tab" aria-selected="{{ isChart }}" onClick="{{ setChart }}" style="min-height:40px;padding:0 14px;border-radius:999px;border:0;background:{{ tabChartBg }};color:#1F2A2E;box-shadow:{{ tabChartSh }};font-size:13px;font-weight:500;cursor:pointer">Çizelge</button>
+              </div>
+            </div>
+
+            <sc-if value="{{ isLoading }}" hint-placeholder-val="{{ false }}">
+              <div role="status" aria-label="Saatler yükleniyor" style="padding:0 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px">
+                <span style="height:52px;border-radius:12px;background:#EFE8DE"></span><span style="height:52px;border-radius:12px;background:#EFE8DE"></span><span style="height:52px;border-radius:12px;background:#EFE8DE;opacity:.7"></span><span style="height:52px;border-radius:12px;background:#EFE8DE;opacity:.7"></span><span style="height:52px;border-radius:12px;background:#EFE8DE;opacity:.45"></span><span style="height:52px;border-radius:12px;background:#EFE8DE;opacity:.45"></span>
+              </div>
+            </sc-if>
+            <sc-if value="{{ isError }}" hint-placeholder-val="{{ false }}">
+              <div role="alert" style="margin:0 20px;padding:18px;border-radius:14px;background:#F8E6E2;border:1px solid #D48A82;display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+                <span style="font-size:16px;font-weight:600;color:#1F2A2E">Saatler yüklenemedi</span>
+                <span style="font-size:14px;line-height:1.5;color:#3A4549">Bağlantınızı kontrol edip tekrar deneyin. Seçtiğiniz hizmetler kaybolmadı.</span>
+                <button onClick="{{ retry }}" style="min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid rgba(31,42,46,.22);background:#FFFDF9;color:#1F2A2E;font-size:14px;font-weight:600;cursor:pointer">Tekrar dene</button>
+              </div>
+            </sc-if>
+            <sc-if value="{{ isClosed }}" hint-placeholder-val="{{ false }}">
+              <div style="margin:0 20px;padding:18px;border-radius:14px;border:1.5px dashed rgba(31,42,46,.25);display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+                <span style="font-size:16px;font-weight:600;color:#1F2A2E">Stüdyo bu gün kapalı</span>
+                <button onClick="{{ goNextDay }}" style="min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid rgba(31,42,46,.22);background:#FFFDF9;color:#1F2A2E;font-size:14px;font-weight:600;cursor:pointer">{{ nextDayLabel }} →</button>
+              </div>
+            </sc-if>
+            <sc-if value="{{ isFull }}" hint-placeholder-val="{{ false }}">
+              <div style="margin:0 20px;padding:18px;border-radius:14px;border:1.5px solid #C44536;background:repeating-linear-gradient(135deg,#FBEAE7 0 6px,#FFF6F4 6px 14px);display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+                <span style="font-size:16px;font-weight:600;color:#8E2F26">Bu gün dolu · uygun saat kalmadı</span>
+                <span style="font-size:14px;line-height:1.5;color:#3A4549">{{ fullHint }}</span>
+                <button onClick="{{ goNextDay }}" style="min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid rgba(31,42,46,.22);background:#FFFDF9;color:#1F2A2E;font-size:14px;font-weight:600;cursor:pointer">{{ nextDayLabel }} →</button>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ showList }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:0 20px;display:flex;flex-direction:column;gap:20px">
+                <sc-for list="{{ groups }}" as="g" hint-placeholder-count="2">
+                  <div role="group" aria-label="{{ g.name }}" style="display:flex;flex-direction:column;gap:10px">
+                    <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-family:var(--mk-font-mono);font-size:11px;letter-spacing:.16em;color:#5B6467">{{ g.upper }}</span><span style="font-size:12px;color:#6B7275">{{ g.count }}</span></div>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px">
+                      <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="4">
+                        <button aria-pressed="{{ it.sel }}" aria-label="{{ it.aria }}" onClick="{{ it.pick }}" style="min-height:52px;border-radius:12px;border:1.5px solid {{ it.border }};background:{{ it.bg }};color:{{ it.fg }};font-family:var(--mk-font-mono);font-size:15px;display:flex;align-items:center;justify-content:center;gap:6px;cursor:pointer;transition:background .18s, border-color .18s">{{ it.mark }}{{ it.label }}</button>
+                      </sc-for>
+                    </div>
+                  </div>
+                </sc-for>
+                <p style="margin:0;font-size:12px;line-height:1.5;color:#6B7275">Saatler koltukta geçecek süreyi gösterir. Dolu aralıklar seçilemez; kimin olduğu gösterilmez.</p>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ showChart }}" hint-placeholder-val="{{ false }}">
+              <div style="margin:0 20px;display:grid;grid-template-columns:48px minmax(0,1fr)">
+                <div aria-hidden="true" style="position:relative;height:{{ chartH }}px">
+                  <sc-for list="{{ hours }}" as="h" hint-placeholder-count="6">
+                    <span style="position:absolute;right:8px;top:{{ h.top }}px;transform:translateY(-50%);font-family:var(--mk-font-mono);font-size:11px;color:#6B7275">{{ h.label }}</span>
+                  </sc-for>
+                </div>
+                <div style="position:relative;height:{{ chartH }}px;border-left:1px solid rgba(31,42,46,.16);background:#FFFDF9;border-radius:0 12px 12px 0">
+                  <sc-for list="{{ hours }}" as="h" hint-placeholder-count="6">
+                    <span style="position:absolute;left:0;right:0;top:{{ h.top }}px;border-top:1px solid rgba(31,42,46,.07)"></span>
+                  </sc-for>
+                  <sc-for list="{{ blocks }}" as="b" hint-placeholder-count="0">
+                    <sc-if value="{{ b.isSlot }}" hint-placeholder-val="{{ false }}">
+                      <button onClick="{{ b.pick }}" aria-label="{{ b.aria }}" style="position:absolute;left:6px;right:6px;top:{{ b.top }}px;height:{{ b.h }}px;border-radius:9px;border:1.5px solid rgba(63,107,94,.45);background:#FFFDF9;display:flex;align-items:center;justify-content:space-between;padding:0 12px;cursor:pointer;color:#1F2A2E" style-hover="background:#E3ECE7"><span style="font-family:var(--mk-font-mono);font-size:13px">{{ b.label }}</span><span style="font-size:12px;font-weight:600;color:#3F6B5E">Seç</span></button>
+                    </sc-if>
+                    <sc-if value="{{ b.isSel }}" hint-placeholder-val="{{ false }}">
+                      <button onClick="{{ b.pick }}" aria-pressed="true" aria-label="{{ b.aria }}" style="position:absolute;left:6px;right:6px;top:{{ b.top }}px;height:{{ b.h }}px;border-radius:9px;border:1.5px solid #3F6B5E;background:#3F6B5E;box-shadow:0 6px 16px rgba(63,107,94,.25);display:flex;align-items:center;justify-content:space-between;padding:0 12px;color:#fff;cursor:pointer"><span style="font-family:var(--mk-font-mono);font-size:13px">{{ b.label }}</span><span style="font-size:12px;font-weight:600">✓ Seçiminiz</span></button>
+                    </sc-if>
+                    <sc-if value="{{ b.isBusy }}" hint-placeholder-val="{{ false }}">
+                      <div style="position:absolute;left:6px;right:6px;top:{{ b.top }}px;height:{{ b.h }}px;border-radius:9px;background:repeating-linear-gradient(135deg,#F3D3CE 0 5px,#FBEAE7 5px 11px);border:1.5px solid #C44536;display:flex;align-items:center;gap:6px;padding:0 12px;font-size:13px;font-weight:600;color:#8E2F26"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M5.6 5.6l12.8 12.8"></path></svg>Dolu</div>
+                    </sc-if>
+                    <sc-if value="{{ b.isBreak }}" hint-placeholder-val="{{ false }}">
+                      <div style="position:absolute;left:6px;right:6px;top:{{ b.top }}px;height:{{ b.h }}px;border-radius:9px;background:#F1E6DA;border:1px solid rgba(185,133,90,.4);display:flex;align-items:center;padding:0 12px;font-size:13px;color:#3A4549">Mola · {{ b.label }}</div>
+                    </sc-if>
+                    <sc-if value="{{ b.isClosed }}" hint-placeholder-val="{{ false }}">
+                      <div style="position:absolute;left:0;right:0;top:{{ b.top }}px;height:{{ b.h }}px;background:#E6DFD4;display:flex;align-items:center;padding:0 12px;font-size:13px;color:#5B6467">{{ b.label }}</div>
+                    </sc-if>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-if>
+          </section>
+        </sc-if>
+
+        <sc-if value="{{ isBilgi }}" hint-placeholder-val="{{ false }}">
+          <section style="display:flex;flex-direction:column;gap:24px;padding:24px 20px 32px">
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <span style="font-family:var(--mk-font-mono);font-size:11px;letter-spacing:.16em;color:#3F6B5E">ADIM 3 · BİLGİLER</span>
+              <h1 style="margin:0;font-family:var(--mk-font-display);font-weight:600;font-size:32px;line-height:1.08;color:#1F2A2E">İLETİŞİM BİLGİLERİ</h1>
+            </div>
+
+            <div style="border-radius:14px;border:1px solid rgba(31,42,46,.12);background:#FFFDF9;display:flex;flex-direction:column">
+              <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid rgba(31,42,46,.12)">
+                <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:3px"><span style="font-size:12px;color:#6B7275">Hizmet · {{ staffName }}</span><span style="font-size:15px;color:#1F2A2E">{{ svcNames }}</span></div>
+                <button onClick="{{ editSvc }}" style="min-height:44px;padding:0 10px;background:none;border:0;color:#3F6B5E;font-size:14px;font-weight:600;cursor:pointer">Değiştir</button>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid rgba(31,42,46,.12)">
+                <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:3px"><span style="font-size:12px;color:#6B7275">{{ dayTitle }}</span><span style="font-family:var(--mk-font-mono);font-size:15px;color:#1F2A2E">{{ slotLabel }}</span></div>
+                <button onClick="{{ editTime }}" style="min-height:44px;padding:0 10px;background:none;border:0;color:#3F6B5E;font-size:14px;font-weight:600;cursor:pointer">Değiştir</button>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:14px 16px"><span style="font-size:14px;color:#5B6467">{{ totalDurLabel }}</span><span style="font-family:var(--mk-font-mono);font-size:15px;color:#1F2A2E">{{ totalPriceLabel }}</span></div>
+            </div>
+
+            <sc-if value="{{ bForm }}" hint-placeholder-val="{{ false }}">
+              <div role="alert" style="padding:12px 16px;border-radius:14px;background:#F8E6E2;border:1px solid #D48A82;font-size:14px;line-height:1.5;color:#1F2A2E">{{ formMsg }}</div>
+            </sc-if>
+            <sc-if value="{{ bNetwork }}" hint-placeholder-val="{{ false }}">
+              <div role="alert" style="padding:14px 16px;border-radius:14px;background:#F8E6E2;border:1px solid #D48A82;display:flex;flex-direction:column;gap:6px">
+                <span style="font-size:15px;font-weight:600;color:#1F2A2E">Bağlantı kurulamadı</span>
+                <span style="font-size:14px;line-height:1.5;color:#3A4549">Talebiniz gönderilmedi. Bilgileriniz duruyor; bağlantı gelince tekrar gönderin.</span>
+              </div>
+            </sc-if>
+            <sc-if value="{{ bDup }}" hint-placeholder-val="{{ false }}">
+              <div role="alert" style="padding:14px 16px;border-radius:14px;background:#FBF1DF;border:1.5px dashed #C99A4A;display:flex;flex-direction:column;gap:10px;align-items:flex-start">
+                <span style="font-size:15px;font-weight:600;color:#1F2A2E">Bu numarayla bekleyen bir talebiniz var</span>
+                <span style="font-size:14px;line-height:1.5;color:#3A4549">Aynı talep ikinci kez gönderilmedi. Mevcut talebinizi açıp oradan değiştirebilir veya iptal edebilirsiniz.</span>
+                <button onClick="{{ openExisting }}" style="min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid rgba(31,42,46,.22);background:#FFFDF9;color:#1F2A2E;font-size:14px;font-weight:600;cursor:pointer">Mevcut talebi aç</button>
+              </div>
+            </sc-if>
+
+            <form onSubmit="{{ onFormSubmit }}" noValidate="{{ true }}" style="display:flex;flex-direction:column;gap:18px;position:relative">
+              <div style="display:flex;flex-direction:column;gap:6px">
+                <label for="ea-ad" style="font-size:14px;font-weight:500;color:#1F2A2E">Ad soyad</label>
+                <input id="ea-ad" name="name" type="text" autoComplete="name" autoCapitalize="words" enterKeyHint="next" value="{{ name }}" onChange="{{ onName }}" onFocus="{{ onFocus }}" onBlur="{{ onBlur }}" disabled="{{ sending }}" aria-invalid="{{ nameInvalid }}" aria-describedby="ea-ad-e" style="min-height:52px;padding:0 16px;border-radius:12px;border:1.5px solid {{ nameBorder }};background:#FFFDF9;color:#1F2A2E;font-size:16px;outline:none" style-focus="border-color:#3F6B5E;box-shadow:0 0 0 3px rgba(63,107,94,.18)">
+                <sc-if value="{{ nameErr }}" hint-placeholder-val="{{ false }}"><span id="ea-ad-e" style="font-size:13px;color:#A63D33">⚠ {{ nameErr }}</span></sc-if>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:6px">
+                <label for="ea-tel" style="font-size:14px;font-weight:500;color:#1F2A2E">Cep telefonu</label>
+                <div style="display:flex;align-items:stretch;min-height:52px;border-radius:12px;border:1.5px solid {{ phoneBorder }};background:#FFFDF9;overflow:hidden">
+                  <span style="display:flex;align-items:center;padding:0 12px 0 16px;font-family:var(--mk-font-mono);font-size:15px;color:#5B6467;border-right:1px solid rgba(31,42,46,.12)">+90</span>
+                  <input id="ea-tel" name="tel" type="tel" inputMode="tel" autoComplete="tel-national" enterKeyHint="next" placeholder="5XX XXX XX XX" value="{{ phone }}" onChange="{{ onPhone }}" onFocus="{{ onFocus }}" onBlur="{{ onBlur }}" disabled="{{ sending }}" aria-invalid="{{ phoneInvalid }}" aria-describedby="ea-tel-e" style="flex:1;min-width:0;padding:0 14px;border:0;background:transparent;color:#1F2A2E;font-family:var(--mk-font-mono);font-size:16px;outline:none">
+                </div>
+                <sc-if value="{{ phoneErr }}" hint-placeholder-val="{{ false }}"><span id="ea-tel-e" style="font-size:13px;color:#A63D33">⚠ {{ phoneErr }}</span></sc-if>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:6px">
+                <div style="display:flex;justify-content:space-between;align-items:baseline"><label for="ea-not" style="font-size:14px;font-weight:500;color:#1F2A2E">Not <span style="font-weight:400;color:#6B7275">(isteğe bağlı)</span></label><span style="font-family:var(--mk-font-mono);font-size:11px;color:#6B7275">{{ noteCount }}/200</span></div>
+                <textarea id="ea-not" name="note" rows="3" maxLength="200" enterKeyHint="done" placeholder="Örn. kısa bir tercih" value="{{ note }}" onChange="{{ onNote }}" onFocus="{{ onFocus }}" onBlur="{{ onBlur }}" disabled="{{ sending }}" style="padding:14px 16px;border-radius:12px;border:1.5px solid rgba(31,42,46,.22);background:#FFFDF9;color:#1F2A2E;font-size:16px;line-height:1.5;resize:vertical;outline:none" style-focus="border-color:#3F6B5E;box-shadow:0 0 0 3px rgba(63,107,94,.18)"></textarea>
+              </div>
+              <label id="ea-consent-field" style="display:flex;gap:12px;align-items:flex-start;min-height:44px;padding:14px;border-radius:14px;border:1px solid {{ consentBorder }};background:#FFFDF9;cursor:pointer;scroll-margin:100px">
+                <input id="ea-consent" name="consent" type="checkbox" required="{{ true }}" aria-required="true" aria-invalid="{{ consentInvalid }}" aria-describedby="ea-consent-error" checked="{{ consent }}" onChange="{{ onConsent }}" disabled="{{ sending }}" style="width:22px;height:22px;accent-color:#3F6B5E;margin:1px 0 0;flex:none;cursor:pointer">
+                <span style="font-size:14px;line-height:1.55;color:#3A4549">Randevumun onayı, hatırlatılması, değiştirilmesi veya iptali hakkında telefon ve WhatsApp üzerinden benimle iletişime geçilmesine izin veriyorum.</span>
+              </label>
+              <sc-if value="{{ consentError }}"><span id="ea-consent-error" role="alert" style="font-size:13px;line-height:1.5;color:#A63D33">{{ consentError }}</span></sc-if>
+              <button type="submit" tabIndex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);border:0;padding:0">Gönder</button>
+            </form>
+          </section>
+        </sc-if>
+
+        <sc-if value="{{ isSonuc }}" hint-placeholder-val="{{ false }}">
+          <section style="display:flex;flex-direction:column;gap:24px;padding:32px 20px 40px">
+            <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start">
+              <span style="width:56px;height:56px;border-radius:50%;border:1.5px dashed #C99A4A;background:#FBF1DF;display:grid;place-items:center;color:#8A5A0B"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M6 2h12M6 22h12M7 2v4l5 6 5-6V2M7 22v-4l5-6 5 6v4"></path></svg></span>
+              <span style="display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;border:1.5px dashed #C99A4A;color:#8A5A0B;font-family:var(--mk-font-mono);font-size:11px;letter-spacing:.12em">TALEP · ONAY BEKLİYOR</span>
+              <h1 style="margin:0;font-family:var(--mk-font-display);font-weight:600;font-size:32px;line-height:1.08;color:#1F2A2E">TALEBİNİZ ALINDI</h1>
+              <p style="margin:0;font-size:16px;line-height:1.55;color:#3A4549">Stüdyo onayı bekleniyor. Onaylanana kadar bu saat kesinleşmiş bir randevu değildir.</p>
+            </div>
+            <div style="border-radius:14px;border:1.5px dashed #C99A4A;background:#FFFDF9;padding:16px;display:flex;flex-direction:column;gap:10px">
+              <span style="font-size:13px;color:#5B6467">{{ tk.dayTitle }}</span>
+              <span style="font-family:var(--mk-font-mono);font-size:22px;color:#1F2A2E">{{ tk.range }}</span>
+              <span style="font-size:15px;color:#1F2A2E">{{ tk.svcNames }} · {{ tk.staffName }}</span>
+              <span style="font-size:13px;color:#6B7275">{{ tk.dur }} · {{ tk.price }} · ödeme stüdyoda</span>
+            </div>
+            <p style="margin:0;font-size:14px;line-height:1.55;color:#3A4549">{{ consentNote }}</p>
+            <div style="display:flex;flex-direction:column;gap:10px;padding:16px;border-radius:14px;background:#FFFDF9;border:1px solid rgba(31,42,46,.12)">
+              <span style="font-size:14px;font-weight:500;color:#1F2A2E">Kişisel takip bağlantınız</span>
+              <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+                <span style="flex:1;min-width:160px;font-family:var(--mk-font-mono);font-size:13px;color:#1F2A2E;padding:12px;border-radius:9px;background:#EFE8DE;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ trackPath }}</span>
+                <button onClick="{{ copy }}" style="min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid rgba(31,42,46,.22);background:#FFFDF9;color:#1F2A2E;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15V5a2 2 0 0 1 2-2h10"></path></svg><span aria-live="polite">{{ copyLabel }}</span></button>
+              </div>
+              <span style="font-size:12px;line-height:1.5;color:#6B7275">Bu bağlantı yalnız bu talebi gösterir; başka kimseyle paylaşmayın.</span>
+            </div>
+            <sc-if value="{{ canAddCal }}"><div style="display:flex;flex-direction:column;gap:8px;padding:16px;border-radius:14px;background:#FFFDF9;border:1px solid rgba(31,42,46,.12)">
+              <button onClick="{{ openIcs }}" style="min-height:52px;border-radius:999px;border:1.5px solid rgba(31,42,46,.22);background:#FFFDF9;color:#1F2A2E;font-size:16px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px" style-hover="border-color:#1F2A2E"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4M12 13v5M9.5 15.5h5"></path></svg>Takvimime ekle · iPhone / Android</button>
+              <span style="font-size:12px;line-height:1.5;color:#6B7275">Onaylı randevunuzu takviminize ekleyebilirsiniz.</span>
+            </div></sc-if>
+            <button onClick="{{ openTrack }}" style="min-height:52px;border-radius:999px;border:0;background:#B3261E;color:#fff;font-size:16px;font-weight:600;cursor:pointer;box-shadow:0 6px 18px rgba(179,38,30,.22)" style-hover="background:#931F18">Talebi görüntüle</button>
+          </section>
+        </sc-if>
+
+        <sc-if value="{{ isTakip }}" hint-placeholder-val="{{ false }}">
+          <section style="display:flex;flex-direction:column;gap:22px;padding:28px 20px 40px">
+            <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start">
+              <span style="width:56px;height:56px;border-radius:50%;border:1.5px {{ st.ring }} {{ st.border }};background:{{ st.bg }};display:grid;place-items:center;color:{{ st.color }}"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path sc-camel-d="{{ st.icon }}"></path></svg></span>
+              <span style="display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;border:1.5px {{ st.ring }} {{ st.border }};color:{{ st.color }};font-family:var(--mk-font-mono);font-size:11px;letter-spacing:.12em">{{ st.tag }}</span>
+              <h1 style="margin:0;font-family:var(--mk-font-display);font-weight:600;font-size:32px;line-height:1.08;color:#1F2A2E">{{ st.title }}</h1>
+              <p style="margin:0;font-size:16px;line-height:1.55;color:#3A4549">{{ st.desc }}</p>
+            </div>
+            <div style="border-radius:14px;border:1.5px {{ st.ring }} {{ st.border }};background:#FFFDF9;padding:16px;display:flex;flex-direction:column;gap:10px;opacity:{{ st.cardOp }}">
+              <span style="font-size:13px;color:#5B6467">{{ tk.dayTitle }}</span>
+              <span style="font-family:var(--mk-font-mono);font-size:22px;color:#1F2A2E;text-decoration:{{ st.deco }}">{{ tk.range }}</span>
+              <span style="font-size:15px;color:#1F2A2E">{{ tk.svcNames }} · {{ tk.staffName }}</span>
+              <span style="font-size:13px;color:#6B7275">{{ tk.dur }} · {{ tk.price }} · ödeme stüdyoda</span>
+            </div>
+            <sc-if value="{{ isCancelled }}" hint-placeholder-val="{{ false }}">
+              <dl style="margin:0;padding:16px;border-radius:14px;background:#FFFDF9;border:1px solid rgba(31,42,46,.12);display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px 16px;font-size:14px">
+                <dt style="color:#6B7275">Sebep</dt><dd style="margin:0;color:#1F2A2E">{{ cancelInfo.reason }}</dd>
+                <dt style="color:#6B7275">İptal eden</dt><dd style="margin:0;color:#1F2A2E">{{ cancelInfo.by }}</dd>
+                <dt style="color:#6B7275">Tarih</dt><dd style="margin:0;color:#1F2A2E">{{ cancelInfo.at }}</dd>
+              </dl>
+            </sc-if>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <sc-if value="{{ canAddCal }}" hint-placeholder-val="{{ false }}">
+                <button onClick="{{ openIcs }}" style="min-height:56px;border-radius:999px;border:0;background:#B3261E;color:#fff;font-size:17px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 6px 18px rgba(179,38,30,.22)" style-hover="background:#931F18"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4M12 13v5M9.5 15.5h5"></path></svg>Takvimime ekle</button>
+              </sc-if>
+              <sc-if value="{{ showCancelBtn }}" hint-placeholder-val="{{ false }}">
+                <button onClick="{{ openCancel }}" style="min-height:50px;border-radius:999px;border:1.5px solid #D48A82;background:transparent;color:#A63D33;font-size:16px;font-weight:600;cursor:pointer" style-hover="background:#F8E6E2">{{ cancelBtnLabel }}</button>
+              </sc-if>
+              <sc-if value="{{ showLastMinute }}" hint-placeholder-val="{{ false }}">
+                <div style="padding:14px 16px;border-radius:14px;background:#FFFDF9;border:1px solid rgba(31,42,46,.22);display:flex;flex-direction:column;gap:10px;align-items:flex-start">
+                  <span style="font-size:15px;font-weight:600;color:#1F2A2E">Çevrim içi iptal kapandı</span>
+                  <span style="font-size:14px;line-height:1.5;color:#3A4549">Randevuya bir saatten az kaldı. Değişiklik için stüdyoya doğrudan yazın.</span>
+                  <a href="https://www.instagram.com/emreakcinarhairstudio/" target="_blank" rel="noopener" style="min-height:44px;display:inline-flex;align-items:center;padding:0 16px;border-radius:999px;border:1.5px solid rgba(31,42,46,.22);color:#1F2A2E;text-decoration:none;font-size:14px;font-weight:600">Instagram’dan stüdyoya yaz →</a>
+                </div>
+              </sc-if>
+              <sc-if value="{{ canRebook }}" hint-placeholder-val="{{ false }}">
+                <button onClick="{{ rebook }}" style="min-height:50px;border-radius:999px;border:1.5px solid rgba(31,42,46,.22);background:#FFFDF9;color:#1F2A2E;font-size:16px;font-weight:600;cursor:pointer">Yeni talep oluştur</button>
+              </sc-if>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <span style="font-family:var(--mk-font-mono);font-size:11px;letter-spacing:.16em;color:#5B6467">DURUM GEÇMİŞİ</span>
+              <ol style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px">
+                <sc-for list="{{ history }}" as="h" hint-placeholder-count="1">
+                  <li style="display:flex;gap:12px;align-items:flex-start"><span style="width:9px;height:9px;margin-top:6px;border-radius:50%;background:{{ h.dot }};flex:none"></span><span style="display:flex;flex-direction:column;gap:2px"><span style="font-size:14px;color:#1F2A2E">{{ h.label }}</span><span style="font-family:var(--mk-font-mono);font-size:12px;color:#6B7275">{{ h.at }}</span></span></li>
+                </sc-for>
+              </ol>
+            </div>
+            
+          </section>
+        </sc-if>
+      </main>
+
+      <sc-if value="{{ showAside }}" hint-placeholder-val="{{ false }}">
+        <aside aria-label="Özet" style="position:sticky;top:88px;margin-top:24px;padding:22px;border-radius:20px;background:#FFFDF9;border:1px solid rgba(31,42,46,.12);box-shadow:0 8px 28px rgba(31,42,46,.08);display:flex;flex-direction:column;gap:16px">
+          <span style="font-family:var(--mk-font-mono);font-size:11px;letter-spacing:.16em;color:#5B6467">ÖZET</span>
+          <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;color:#6B7275">Hizmet</span><span style="font-size:15px;color:#1F2A2E">{{ svcNamesOr }}</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;color:#6B7275">Personel</span><span style="font-size:15px;color:#1F2A2E">{{ staffNameOr }}</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;color:#6B7275">Gün ve saat</span><span style="font-size:15px;color:#1F2A2E">{{ whenOr }}</span></div>
+          <div style="display:flex;justify-content:space-between;padding-top:14px;border-top:1px solid rgba(31,42,46,.12)"><span style="font-size:14px;color:#5B6467">{{ totalDurLabel }}</span><span style="font-family:var(--mk-font-mono);font-size:16px;color:#1F2A2E">{{ totalPriceLabel }}</span></div>
+          <button onClick="{{ cta }}" disabled="{{ ctaDisabled }}" aria-disabled="{{ ctaAriaDisabled }}" style="min-height:52px;border-radius:999px;border:0;background:#B3261E;color:#fff;font-size:16px;font-weight:600;cursor:{{ ctaCursor }};opacity:{{ ctaOp }};display:flex;align-items:center;justify-content:center;gap:10px" style-hover="background:#931F18">{{ ctaIcon }}{{ ctaLabel }}</button>
+          <span style="font-size:12px;line-height:1.5;color:#6B7275">{{ barLine2 }}</span>
+        </aside>
+      </sc-if>
+    </div>
+
+    <sc-if value="{{ showBar }}" hint-placeholder-val="{{ true }}">
+      <div style="position:sticky;bottom:0;z-index:6;display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;padding:12px 16px;padding-bottom:calc(12px + env(safe-area-inset-bottom));background:rgba(255,253,249,.96);backdrop-filter:blur(14px);border-top:1px solid rgba(31,42,46,.12);box-shadow:0 -6px 20px rgba(31,42,46,.06)">
+        <div style="flex:1 1 170px;min-width:0;display:flex;flex-direction:column;gap:3px">
+          <span style="font-size:15px;font-weight:600;color:#1F2A2E;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ barLine1 }}</span>
+          <span style="font-size:12px;color:#5B6467;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ barLine2 }}</span>
+        </div>
+        <button onClick="{{ cta }}" disabled="{{ ctaDisabled }}" aria-disabled="{{ ctaAriaDisabled }}" style="flex:1 0 auto;min-height:50px;padding:0 24px;border-radius:999px;border:0;background:#B3261E;color:#fff;font-size:16px;font-weight:600;cursor:{{ ctaCursor }};opacity:{{ ctaOp }};display:flex;align-items:center;justify-content:center;gap:10px" style-hover="background:#931F18" style-active="transform:scale(.98)">{{ ctaIcon }}{{ ctaLabel }}</button>
+      </div>
+    </sc-if>
+  </div>
+
+  <sc-if value="{{ calOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;z-index:30;display:flex;justify-content:center;align-items:{{ sheetAlign }}">
+      <div onClick="{{ closeCal }}" style="position:absolute;inset:0;background:rgba(31,42,46,.4)"></div>
+      <div role="dialog" aria-modal="true" aria-labelledby="ea-cal-t" style="position:relative;width:100%;max-width:440px;max-height:calc(100dvh - env(safe-area-inset-top) - 12px);overflow:auto;overscroll-behavior:contain;background:#FFFDF9;border-radius:{{ sheetRadius }};box-shadow:0 -10px 40px rgba(31,42,46,.18);padding:10px 18px;padding-bottom:calc(18px + env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:14px">
+        <span style="align-self:center;width:36px;height:4px;border-radius:2px;background:#D5CEC3"></span>
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <h2 id="ea-cal-t" style="margin:0;font-size:18px;font-weight:600;color:#1F2A2E">Gün seçin</h2>
+          <button onClick="{{ closeCal }}" aria-label="Kapat" style="width:44px;height:44px;margin-right:-10px;display:grid;place-items:center;background:none;border:0;border-radius:999px;color:#1F2A2E;cursor:pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M18 6 6 18M6 6l12 12"></path></svg></button>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <button onClick="{{ prevMonth }}" disabled="{{ prevDisabled }}" aria-label="Önceki ay" style="width:44px;height:44px;display:grid;place-items:center;border-radius:999px;border:1px solid rgba(31,42,46,.16);background:transparent;color:#1F2A2E;opacity:{{ prevOp }};cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M15 18l-6-6 6-6"></path></svg></button>
+          <span aria-live="polite" style="font-family:var(--mk-font-display);font-weight:500;font-size:20px;letter-spacing:.02em;color:#1F2A2E">{{ monthLabel }}</span>
+          <button onClick="{{ nextMonth }}" disabled="{{ nextDisabled }}" aria-label="Sonraki ay" style="width:44px;height:44px;display:grid;place-items:center;border-radius:999px;border:1px solid rgba(31,42,46,.16);background:transparent;color:#1F2A2E;opacity:{{ nextOp }};cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M9 18l6-6-6-6"></path></svg></button>
+        </div>
+        <div aria-hidden="true" style="display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;font-family:var(--mk-font-mono);font-size:11px;color:#6B7275;text-align:center"><span>PZT</span><span>SAL</span><span>ÇAR</span><span>PER</span><span>CUM</span><span>CMT</span><span>PAZ</span></div>
+        <div style="display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px">
+          <sc-for list="{{ cells }}" as="c" hint-placeholder-count="35">
+            <sc-if value="{{ c.blank }}" hint-placeholder-val="{{ false }}"><span></span></sc-if>
+            <sc-if value="{{ c.real }}" hint-placeholder-val="{{ true }}">
+              <button onClick="{{ c.pick }}" disabled="{{ c.disabled }}" aria-label="{{ c.aria }}" aria-current="{{ c.cur }}" style="height:48px;border-radius:12px;border:1.5px {{ c.bs }} {{ c.bc }};background:{{ c.bg }};color:{{ c.fg }};display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;cursor:{{ c.cursor }};padding:0;position:relative">
+                <span style="font-size:15px;font-weight:500;text-decoration:{{ c.deco }}">{{ c.d }}</span>
+                <span style="width:5px;height:5px;border-radius:50%;background:{{ c.dot }};border:1px solid {{ c.dotB }}"></span><sc-if value="{{ c.full }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="position:absolute;top:3px;right:5px;font-size:10px;font-weight:700;line-height:1;color:#8E2F26">×</span></sc-if>
+              </button>
+            </sc-if>
+          </sc-for>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px;font-size:12px;color:#3A4549">
+          <span style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;border-radius:5px;border:1.5px solid #1F2A2E"></span>Bugün</span>
+          <span style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;border-radius:5px;background:#3F6B5E"></span>Seçili gün</span>
+          <span style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;display:grid;place-items:center"><span style="width:5px;height:5px;border-radius:50%;background:#3F6B5E"></span></span>Uygun saat var</span>
+          <span style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;display:grid;place-items:center;border-radius:5px;border:1.5px solid #C44536;background:#FBEAE7;color:#8E2F26;font-size:11px;font-weight:700">×</span><strong style="color:#8E2F26;font-weight:600">Dolu</strong></span>
+          <span style="display:flex;align-items:center;gap:8px"><span style="width:18px;text-align:center;text-decoration:line-through;color:#6B7275">18</span>Kapalı</span>
+          <span style="display:flex;align-items:center;gap:8px"><span style="width:18px;text-align:center;color:#B5B9BA">9</span>Geçmiş</span>
+        </div>
+        <button onClick="{{ goToday }}" style="min-height:48px;border-radius:999px;border:1.5px solid rgba(31,42,46,.22);background:transparent;color:#1F2A2E;font-size:15px;font-weight:600;cursor:pointer">Bugüne dön</button>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ cancelOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;z-index:30;display:flex;justify-content:center;align-items:{{ sheetAlign }}">
+      <div onClick="{{ closeCancel }}" style="position:absolute;inset:0;background:rgba(31,42,46,.4)"></div>
+      <div role="dialog" aria-modal="true" aria-labelledby="ea-can-t" style="position:relative;width:100%;max-width:480px;max-height:calc(100dvh - env(safe-area-inset-top) - 12px);overflow:auto;overscroll-behavior:contain;background:#FFFDF9;border-radius:{{ sheetRadius }};box-shadow:0 -10px 40px rgba(31,42,46,.18);padding:10px 20px;padding-bottom:calc(20px + env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:16px">
+        <span style="align-self:center;width:36px;height:4px;border-radius:2px;background:#D5CEC3"></span>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <h2 id="ea-can-t" style="margin:0;font-size:20px;font-weight:600;color:#1F2A2E">Neden iptal ediyorsunuz?</h2>
+          <span style="font-size:14px;color:#5B6467">{{ cancelTarget }}</span>
+        </div>
+        <div role="radiogroup" aria-label="İptal sebebi" style="display:flex;flex-direction:column">
+          <sc-for list="{{ reasons }}" as="r" hint-placeholder-count="5">
+            <label style="min-height:52px;display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(31,42,46,.10);cursor:pointer;font-size:15px;color:#1F2A2E">
+              <input type="radio" name="ea-reason" checked="{{ r.sel }}" onChange="{{ r.pick }}" style="width:20px;height:20px;accent-color:#3F6B5E;margin:0;flex:none">{{ r.label }}
+            </label>
+          </sc-for>
+        </div>
+        <sc-if value="{{ otherSel }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <label for="ea-cother" style="font-size:14px;font-weight:500;color:#1F2A2E">Kısa açıklama</label>
+            <textarea id="ea-cother" rows="2" maxLength="160" value="{{ cOther }}" onChange="{{ onOther }}" style="padding:12px 14px;border-radius:12px;border:1.5px solid rgba(31,42,46,.22);background:#FFFDF9;color:#1F2A2E;font-size:16px;resize:none;outline:none"></textarea>
+          </div>
+        </sc-if>
+        <sc-if value="{{ cErr }}" hint-placeholder-val="{{ false }}"><span role="alert" style="font-size:13px;color:#A63D33">⚠ {{ cErrMsg }}</span></sc-if>
+        <span style="font-size:13px;line-height:1.5;color:#6B7275">İptal edilen kayıt silinmez; geçmişinizde sebebiyle birlikte kalır.</span>
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px">
+          <button onClick="{{ closeCancel }}" style="min-height:50px;border-radius:999px;border:1.5px solid rgba(31,42,46,.22);background:#FFFDF9;color:#1F2A2E;font-size:16px;font-weight:600;cursor:pointer">Vazgeç</button>
+          <button onClick="{{ confirmCancel }}" style="min-height:50px;border-radius:999px;border:0;background:#A63D33;color:#fff;font-size:16px;font-weight:600;cursor:pointer">İptali onayla</button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ icsOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;z-index:30;display:flex;justify-content:center;align-items:{{ sheetAlign }}">
+      <div onClick="{{ closeIcs }}" style="position:absolute;inset:0;background:rgba(31,42,46,.4)"></div>
+      <div role="dialog" aria-modal="true" aria-labelledby="ea-ics-t" style="position:relative;width:100%;max-width:480px;max-height:calc(100dvh - env(safe-area-inset-top) - 12px);overflow:auto;overscroll-behavior:contain;background:#FFFDF9;border-radius:{{ sheetRadius }};box-shadow:0 -10px 40px rgba(31,42,46,.18);padding:10px 20px;padding-bottom:calc(20px + env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:16px">
+        <span style="align-self:center;width:36px;height:4px;border-radius:2px;background:#D5CEC3"></span>
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px">
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <h2 id="ea-ics-t" style="margin:0;font-size:20px;font-weight:600;color:#1F2A2E">Takvimime ekle</h2>
+            <span style="font-size:14px;line-height:1.5;color:#5B6467">{{ eventSummary }}</span>
+          </div>
+          <button onClick="{{ closeIcs }}" aria-label="Kapat" style="width:44px;height:44px;margin-right:-10px;flex:none;display:grid;place-items:center;background:none;border:0;border-radius:999px;color:#1F2A2E;cursor:pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M18 6 6 18M6 6l12 12"></path></svg></button>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <sc-for list="{{ calOpts }}" as="o" hint-placeholder-count="3">
+            <button onClick="{{ o.pick }}" style="min-height:64px;padding:12px 16px;border-radius:14px;border:1.5px solid {{ o.border }};background:{{ o.bg }};display:flex;align-items:center;gap:12px;text-align:left;cursor:pointer;color:#1F2A2E">
+              <span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:3px"><span style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:16px;font-weight:600">{{ o.name }}<sc-if value="{{ o.rec }}" hint-placeholder-val="{{ false }}"><span style="font-family:var(--mk-font-mono);font-size:10px;letter-spacing:.12em;color:#3F6B5E;border:1px solid rgba(63,107,94,.5);border-radius:999px;padding:3px 8px">BU CİHAZ</span></sc-if></span><span style="font-size:13px;line-height:1.4;color:#5B6467">{{ o.sub }}</span></span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M9 18l6-6-6-6"></path></svg>
+            </button>
+          </sc-for>
+        </div>
+        <sc-if value="{{ icsMsg }}" hint-placeholder-val="{{ false }}">
+          <div role="status" style="padding:12px 14px;border-radius:12px;background:#EFE8DE;font-size:14px;line-height:1.5;color:#1F2A2E">{{ icsMsg }}</div>
+        </sc-if>
+        <ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;font-size:13px;line-height:1.5;color:#5B6467">
+          <sc-if value="{{ icsPending }}" hint-placeholder-val="{{ false }}"><li style="color:#8A5A0B">Talebiniz henüz onaylanmadı. Etkinlik başlığında “Onay bekliyor” yazar; stüdyo onaylayınca ayrıca bildirilirsiniz.</li></sc-if>
+          <li>Bu tek seferlik bir kayıttır. Randevu değişir veya iptal edilirse takviminiz kendiliğinden güncellenmez.</li>
+          <li>Hatırlatmanın çalışması telefonunuzun bildirim ayarlarına bağlıdır.</li>
+        </ul>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>/* Önceden derlenen denetleyici. Üreten: codex. */</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+/* ============================================================
+   MİMARİ KURS — TYPOGRAPHY TOKENS
+   Display: Oswald (condensed, bold, UPPERCASE-leaning)
+   Body:    Geist (clean modern sans)
+   Accent:  Instrument Serif (elegant italic accents)
+   Mono:    Geist Mono (labels, page indicators, eyebrows)
+   ============================================================ */
+:root {
+  --mk-font-display: 'Oswald', 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mk-font-sans: 'Geist', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --mk-font-serif: 'Instrument Serif', Georgia, serif;
+  --mk-font-mono: 'Geist Mono', 'SF Mono', Menlo, monospace;
+
+  /* Weights */
+  --mk-w-regular: 400; /* @kind other */
+  --mk-w-medium: 500; /* @kind other */
+  --mk-w-semibold: 600; /* @kind other */
+  --mk-w-bold: 700; /* @kind other */
+
+  /* Display / heading scale (Oswald) */
+  --mk-text-hero: 96px;     /* story hero headline */
+  --mk-text-display: 64px;  /* big section title */
+  --mk-text-h1: 48px;
+  --mk-text-h2: 38px;
+  --mk-text-h3: 29px;
+
+  /* Body scale (Geist) */
+  --mk-text-lg: 20px;
+  --mk-text-base: 16px;
+  --mk-text-sm: 14px;
+  --mk-text-xs: 12px;
+
+  /* Eyebrow / mono label */
+  --mk-text-eyebrow: 11px;
+
+  /* Line heights */
+  --mk-lh-tight: 1.02; /* @kind other */   /* display */
+  --mk-lh-snug: 1.12; /* @kind other */    /* headings */
+  --mk-lh-body: 1.6; /* @kind other */     /* body copy */
+
+  /* Tracking */
+  --mk-track-display: -0.005em;
+  --mk-track-eyebrow: 0.14em;  /* wide for mono eyebrows */
+  --mk-track-label: 0.1em;
+}

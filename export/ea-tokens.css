@@ -1,0 +1,21 @@
+/* Emre Akçınar Hair Studio — tasarım token'ları · açık ton */
+:root{
+  --ea-bg:#F6F1EA; --ea-card:#FFFDF9; --ea-sunk:#EFE8DE; --ea-closed:#E6DFD4;
+  --ea-ink-1:#1F2A2E; --ea-ink-2:#3A4549; --ea-ink-3:#5B6467; --ea-ink-4:#6B7275; --ea-ink-faint:#A8AEB0;
+  --ea-accent:#3F6B5E; --ea-accent-press:#335A4F; --ea-accent-soft:#E3ECE7;
+  --ea-leather:#B9855A; --ea-leather-soft:#F1E6DA;
+  --ea-line-1:rgba(31,42,46,.12); --ea-line-2:rgba(31,42,46,.22);
+  /* Durumlar: renk + çizgi stili + ikon + metin birlikte */
+  --ea-st-requested:#8A5A0B; --ea-st-requested-bg:#FBF1DF;   /* kesik çizgi, kum saati */
+  --ea-st-confirmed:#2E7048; --ea-st-confirmed-bg:#E4F0E8;   /* düz çizgi, onay */
+  --ea-st-completed:#4A5457; --ea-st-completed-bg:#E9E4DC;   /* dolgulu, çift onay */
+  --ea-st-no-show:#6B4E8A;   --ea-st-no-show-bg:#F0EAF6;     /* kişi-çarpı */
+  --ea-st-cancelled:#A63D33; --ea-st-cancelled-bg:#F8E6E2;   /* üstü çizili saat */
+  --ea-st-rejected:#A63D33;  --ea-st-expired:#5B6467;        /* noktalı çizgi */
+  --ea-slot-busy:repeating-linear-gradient(135deg,rgba(31,42,46,.16) 0 3px,rgba(31,42,46,.04) 3px 8px);
+  --ea-slot-break:rgba(185,133,90,.22);
+  --ea-font-display:'Oswald',sans-serif; --ea-font-sans:'Geist',system-ui,sans-serif;
+  --ea-font-serif:'Instrument Serif',serif; --ea-font-mono:'Geist Mono',monospace;
+  --ea-r-sm:9px; --ea-r-md:14px; --ea-r-lg:20px; --ea-r-pill:999px;
+  --ea-shadow:0 8px 28px rgba(31,42,46,.08); --ea-tap:44px; --ea-ease:cubic-bezier(.4,0,.2,1);
+}

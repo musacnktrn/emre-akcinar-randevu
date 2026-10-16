@@ -1,0 +1,56 @@
+/* ============================================================
+   MİMARİ KURS — COLOR TOKENS
+   Dark, cinematic, premium. Terracotta orange used sparingly.
+   ============================================================ */
+:root {
+  /* — Surfaces (near-black, layered) — */
+  --mk-bg-base: #0A0A0A;            /* page background */
+  --mk-bg-elev-1: #141414;          /* raised cards / panels */
+  --mk-bg-elev-2: #1C1C1C;          /* highest elevation */
+  --mk-bg-card: rgba(255, 255, 255, 0.04); /* glassy translucent card */
+
+  /* — Ink (warm white ramp) — */
+  --mk-ink-primary: #FFFFFF;        /* headings, key text */
+  --mk-ink-secondary: #F5F2EC;      /* body — warm off-white */
+  --mk-ink-tertiary: #C8C2B8;       /* supporting copy */
+  --mk-ink-quaternary: #9A938A;     /* labels, captions */
+  --mk-ink-quinary: #4A453F;        /* disabled / faint */
+
+  /* — Brand accent (terracotta) — */
+  --mk-accent-500: #D9532B;         /* BRAND — CTAs, numbers, keywords */
+  --mk-accent-600: #B8421D;         /* hover / pressed */
+  --mk-accent-700: #A23E1F;         /* deepest */
+  --mk-accent-soft: rgba(217, 83, 43, 0.15); /* tint fills */
+  --mk-accent-glow: rgba(217, 83, 43, 0.20);  /* glow shadow */
+
+  /* — Borders / hairlines — */
+  --mk-border-subtle: rgba(255, 255, 255, 0.10);
+  --mk-border-medium: rgba(255, 255, 255, 0.18);
+  --mk-border-accent: rgba(217, 83, 43, 0.35);
+
+  /* — Support / status — */
+  --mk-wa-green: #25D366;           /* WhatsApp */
+  --mk-wa-green-dark: #1FAE54;
+  --mk-success: #3FFF7E;
+  --mk-error: #FF6B6B;
+
+  /* — Tool brand hints (used in product logos) — */
+  --mk-vray-blue: #5b8fd6;
+  --mk-corona-orange: #ee5a2b;
+
+  /* — Table / zebra — */
+  --mk-row-alt: rgba(255, 255, 255, 0.02);
+  --mk-accent-tint-bg: rgba(217, 83, 43, 0.06);
+
+  /* ----- Semantic aliases ----- */
+  --mk-surface: var(--mk-bg-base);
+  --mk-surface-raised: var(--mk-bg-elev-1);
+  --mk-surface-card: var(--mk-bg-card);
+  --mk-text-heading: var(--mk-ink-primary);
+  --mk-text-body: var(--mk-ink-secondary);
+  --mk-text-muted: var(--mk-ink-quaternary);
+  --mk-text-accent: var(--mk-accent-500);
+  --mk-cta-bg: var(--mk-accent-500);
+  --mk-cta-bg-hover: var(--mk-accent-600);
+  --mk-cta-ink: #FFFFFF;
+}

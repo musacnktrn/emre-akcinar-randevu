@@ -1,0 +1,24 @@
+{
+  "name": "Emre Akçınar Hair Studio · Randevu",
+  "short_name": "Randevu",
+  "lang": "tr",
+  "start_url": "/emre-akcinar-randevu/book/",
+  "scope": "/emre-akcinar-randevu/",
+  "display": "standalone",
+  "background_color": "#F6F1EA",
+  "theme_color": "#F6F1EA",
+  "icons": [
+    {
+      "src": "assets/ea-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/ea-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

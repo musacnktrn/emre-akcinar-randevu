@@ -1,0 +1,31 @@
+/* ============================================================
+   MİMARİ KURS — SPACING, RADII, LAYOUT TOKENS
+   Generous whitespace; calm, premium rhythm.
+   ============================================================ */
+:root {
+  /* 4px base scale */
+  --mk-space-1: 4px;
+  --mk-space-2: 8px;
+  --mk-space-3: 12px;
+  --mk-space-4: 16px;
+  --mk-space-5: 20px;
+  --mk-space-6: 24px;
+  --mk-space-8: 32px;
+  --mk-space-10: 40px;
+  --mk-space-12: 48px;
+  --mk-space-16: 64px;
+  --mk-space-20: 80px;
+  --mk-space-24: 96px;
+
+  /* Radii */
+  --mk-radius-sm: 9px;
+  --mk-radius-md: 14px;   /* cards, tool tiles */
+  --mk-radius-lg: 20px;
+  --mk-radius-pill: 999px;
+
+  /* Layout */
+  --mk-max-w: 540px;      /* funnel content column */
+  --mk-story-w: 1080px;   /* Instagram story width */
+  --mk-story-h: 1920px;   /* Instagram story height */
+  --mk-story-pad: 96px;   /* safe inner padding for story frames */
+}

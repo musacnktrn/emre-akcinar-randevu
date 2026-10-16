@@ -1,0 +1,296 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/core/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Geist|Geist Mono|Instrument Serif|Oswald))/i]",
+        "message": "Font not provided by the design system. Available: Geist, Geist Mono, Instrument Serif, Oswald."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|size|full|icon|disabled|children|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: variant, size, full, icon, disabled, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:primary|secondary|ghost|whatsapp)$/]",
+        "message": "<Button> variant must be one of 'primary' | 'secondary' | 'ghost' | 'whatsapp'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:sm|md|lg)$/]",
+        "message": "<Button> size must be one of 'sm' | 'md' | 'lg'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='PageIndicator'] > JSXAttribute > JSXIdentifier[name!=/^(?:current|total|mode|style|key|ref|className|style|children)$/]",
+        "message": "<PageIndicator> doesn't accept that prop. Declared props: current, total, mode, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='PageIndicator'] > JSXAttribute[name.name='mode'] > Literal[value!=/^(?:counter|bar)$/]",
+        "message": "<PageIndicator> mode must be one of 'counter' | 'bar'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Pill'] > JSXAttribute > JSXIdentifier[name!=/^(?:accent|dot|children|key|ref|className|style|children)$/]",
+        "message": "<Pill> doesn't accept that prop. Declared props: accent, dot, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatNumber'] > JSXAttribute > JSXIdentifier[name!=/^(?:value|label|size|align|style|key|ref|className|style|children)$/]",
+        "message": "<StatNumber> doesn't accept that prop. Declared props: value, label, size, align, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatNumber'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:sm|md|lg|xl)$/]",
+        "message": "<StatNumber> size must be one of 'sm' | 'md' | 'lg' | 'xl'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatNumber'] > JSXAttribute[name.name='align'] > Literal[value!=/^(?:left|center|right)$/]",
+        "message": "<StatNumber> align must be one of 'left' | 'center' | 'right'."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "Button": {
+        "replaces": []
+      },
+      "PageIndicator": {
+        "replaces": []
+      },
+      "Pill": {
+        "replaces": []
+      },
+      "StatNumber": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--mk-accent-500",
+      "--mk-accent-600",
+      "--mk-accent-700",
+      "--mk-accent-glow",
+      "--mk-accent-soft",
+      "--mk-accent-tint-bg",
+      "--mk-bg-base",
+      "--mk-bg-card",
+      "--mk-bg-elev-1",
+      "--mk-bg-elev-2",
+      "--mk-bg-grid",
+      "--mk-bg-spotlight",
+      "--mk-bg-vignette",
+      "--mk-border-accent",
+      "--mk-border-medium",
+      "--mk-border-subtle",
+      "--mk-corona-orange",
+      "--mk-cta-bg",
+      "--mk-cta-bg-hover",
+      "--mk-cta-ink",
+      "--mk-ease",
+      "--mk-ease-bounce",
+      "--mk-error",
+      "--mk-font-display",
+      "--mk-font-mono",
+      "--mk-font-sans",
+      "--mk-font-serif",
+      "--mk-glow-accent",
+      "--mk-glow-accent-strong",
+      "--mk-glow-dot",
+      "--mk-grid-size",
+      "--mk-ink-primary",
+      "--mk-ink-quaternary",
+      "--mk-ink-quinary",
+      "--mk-ink-secondary",
+      "--mk-ink-tertiary",
+      "--mk-lh-body",
+      "--mk-lh-snug",
+      "--mk-lh-tight",
+      "--mk-max-w",
+      "--mk-radius-lg",
+      "--mk-radius-md",
+      "--mk-radius-pill",
+      "--mk-radius-sm",
+      "--mk-row-alt",
+      "--mk-scrim-bottom",
+      "--mk-shadow-card",
+      "--mk-shadow-raised",
+      "--mk-space-1",
+      "--mk-space-10",
+      "--mk-space-12",
+      "--mk-space-16",
+      "--mk-space-2",
+      "--mk-space-20",
+      "--mk-space-24",
+      "--mk-space-3",
+      "--mk-space-4",
+      "--mk-space-5",
+      "--mk-space-6",
+      "--mk-space-8",
+      "--mk-story-h",
+      "--mk-story-pad",
+      "--mk-story-w",
+      "--mk-success",
+      "--mk-surface",
+      "--mk-surface-card",
+      "--mk-surface-raised",
+      "--mk-text-accent",
+      "--mk-text-base",
+      "--mk-text-body",
+      "--mk-text-display",
+      "--mk-text-eyebrow",
+      "--mk-text-h1",
+      "--mk-text-h2",
+      "--mk-text-h3",
+      "--mk-text-heading",
+      "--mk-text-hero",
+      "--mk-text-lg",
+      "--mk-text-muted",
+      "--mk-text-sm",
+      "--mk-text-xs",
+      "--mk-track-display",
+      "--mk-track-eyebrow",
+      "--mk-track-label",
+      "--mk-vray-blue",
+      "--mk-w-bold",
+      "--mk-w-medium",
+      "--mk-w-regular",
+      "--mk-w-semibold",
+      "--mk-wa-green",
+      "--mk-wa-green-dark"
+    ],
+    "tokenKinds": {
+      "--mk-bg-base": "color",
+      "--mk-bg-elev-1": "shadow",
+      "--mk-bg-elev-2": "shadow",
+      "--mk-bg-card": "color",
+      "--mk-ink-primary": "color",
+      "--mk-ink-secondary": "color",
+      "--mk-ink-tertiary": "color",
+      "--mk-ink-quaternary": "color",
+      "--mk-ink-quinary": "color",
+      "--mk-accent-500": "color",
+      "--mk-accent-600": "color",
+      "--mk-accent-700": "color",
+      "--mk-accent-soft": "color",
+      "--mk-accent-glow": "color",
+      "--mk-border-subtle": "color",
+      "--mk-border-medium": "color",
+      "--mk-border-accent": "color",
+      "--mk-wa-green": "color",
+      "--mk-wa-green-dark": "color",
+      "--mk-success": "color",
+      "--mk-error": "color",
+      "--mk-vray-blue": "color",
+      "--mk-corona-orange": "color",
+      "--mk-row-alt": "color",
+      "--mk-accent-tint-bg": "color",
+      "--mk-surface": "color",
+      "--mk-surface-raised": "color",
+      "--mk-surface-card": "color",
+      "--mk-text-heading": "font",
+      "--mk-text-body": "font",
+      "--mk-text-muted": "font",
+      "--mk-text-accent": "font",
+      "--mk-cta-bg": "color",
+      "--mk-cta-bg-hover": "color",
+      "--mk-cta-ink": "color",
+      "--mk-font-display": "font",
+      "--mk-font-sans": "font",
+      "--mk-font-serif": "font",
+      "--mk-font-mono": "font",
+      "--mk-w-regular": "other",
+      "--mk-w-medium": "other",
+      "--mk-w-semibold": "other",
+      "--mk-w-bold": "other",
+      "--mk-text-hero": "font",
+      "--mk-text-display": "font",
+      "--mk-text-h1": "font",
+      "--mk-text-h2": "font",
+      "--mk-text-h3": "font",
+      "--mk-text-lg": "font",
+      "--mk-text-base": "font",
+      "--mk-text-sm": "font",
+      "--mk-text-xs": "font",
+      "--mk-text-eyebrow": "font",
+      "--mk-lh-tight": "other",
+      "--mk-lh-snug": "other",
+      "--mk-lh-body": "other",
+      "--mk-track-display": "spacing",
+      "--mk-track-eyebrow": "spacing",
+      "--mk-track-label": "spacing",
+      "--mk-space-1": "spacing",
+      "--mk-space-2": "spacing",
+      "--mk-space-3": "spacing",
+      "--mk-space-4": "spacing",
+      "--mk-space-5": "spacing",
+      "--mk-space-6": "spacing",
+      "--mk-space-8": "spacing",
+      "--mk-space-10": "spacing",
+      "--mk-space-12": "spacing",
+      "--mk-space-16": "spacing",
+      "--mk-space-20": "spacing",
+      "--mk-space-24": "spacing",
+      "--mk-radius-sm": "radius",
+      "--mk-radius-md": "radius",
+      "--mk-radius-lg": "radius",
+      "--mk-radius-pill": "radius",
+      "--mk-max-w": "spacing",
+      "--mk-story-w": "spacing",
+      "--mk-story-h": "spacing",
+      "--mk-story-pad": "spacing",
+      "--mk-shadow-card": "shadow",
+      "--mk-shadow-raised": "shadow",
+      "--mk-glow-accent": "shadow",
+      "--mk-glow-accent-strong": "shadow",
+      "--mk-glow-dot": "color",
+      "--mk-ease": "other",
+      "--mk-ease-bounce": "other",
+      "--mk-bg-vignette": "color",
+      "--mk-bg-spotlight": "color",
+      "--mk-bg-grid": "color",
+      "--mk-grid-size": "spacing",
+      "--mk-scrim-bottom": "other"
+    },
+    "fontFamilies": [
+      "Geist",
+      "Geist Mono",
+      "Instrument Serif",
+      "Oswald"
+    ]
+  }
+}

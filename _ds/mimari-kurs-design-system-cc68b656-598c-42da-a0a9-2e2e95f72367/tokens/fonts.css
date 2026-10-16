@@ -1,0 +1,85 @@
+/* Üreten: codex. Claude Design teslimindeki Google Fonts yerel varlık olarak paketlendi. */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/emre-akcinar-randevu/fonts/c2bef016fb9b4bcd7b5a.woff2) format('truetype');
+}
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/emre-akcinar-randevu/fonts/541119bccb21575e2c8a.woff2) format('truetype');
+}
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/emre-akcinar-randevu/fonts/011cb50bc76b8e250586.woff2) format('truetype');
+}
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/emre-akcinar-randevu/fonts/e374eee52bb36e0345fe.woff2) format('truetype');
+}
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/emre-akcinar-randevu/fonts/706d7515d64b1e19d9c6.woff2) format('truetype');
+}
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/emre-akcinar-randevu/fonts/e858776f9ad0d058f0b2.woff2) format('truetype');
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/emre-akcinar-randevu/fonts/7e0a56187ecaff85f3d0.woff2) format('truetype');
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/emre-akcinar-randevu/fonts/c1e7453ea26a1d1eea26.woff2) format('truetype');
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/emre-akcinar-randevu/fonts/dd945c631ae3903e866d.woff2) format('truetype');
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/emre-akcinar-randevu/fonts/7a66272734160d5b757e.woff2) format('truetype');
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/emre-akcinar-randevu/fonts/57baaaa1a3428f26ee32.woff2) format('truetype');
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/emre-akcinar-randevu/fonts/513e24ac6980670445b2.woff2) format('truetype');
+}

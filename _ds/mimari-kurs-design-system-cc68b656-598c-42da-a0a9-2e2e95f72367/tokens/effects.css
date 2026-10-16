@@ -1,0 +1,27 @@
+/* ============================================================
+   MİMARİ KURS — SHADOWS, GLOWS, EASING, BACKGROUNDS
+   ============================================================ */
+:root {
+  /* Shadows — soft, deep, on near-black */
+  --mk-shadow-card: 0 8px 32px rgba(0, 0, 0, 0.45);
+  --mk-shadow-raised: 0 2px 12px rgba(0, 0, 0, 0.5);
+
+  /* Accent glows — the signature terracotta halo */
+  --mk-glow-accent: 0 0 24px rgba(217, 83, 43, 0.20);
+  --mk-glow-accent-strong: 0 0 40px rgba(217, 83, 43, 0.35);
+  --mk-glow-dot: 0 0 12px var(--mk-accent-500);
+
+  /* Easing */
+  --mk-ease: cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --mk-ease-bounce: cubic-bezier(0.2, 0.9, 0.3, 1.2); /* @kind other */
+
+  /* Signature backgrounds — cinematic vignettes + faint grid */
+  --mk-bg-vignette: radial-gradient(120% 80% at 50% 0%, rgba(217,83,43,0.10) 0%, transparent 55%), #0A0A0A;
+  --mk-bg-spotlight: radial-gradient(80% 50% at 50% 38%, rgba(217,83,43,0.14) 0%, transparent 60%), #0A0A0A;
+  --mk-bg-grid: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  --mk-grid-size: 40px 40px;
+
+  /* Protection gradient for legible text over imagery */
+  --mk-scrim-bottom: linear-gradient(0deg, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.6) 45%, transparent 100%); /* @kind other */
+}

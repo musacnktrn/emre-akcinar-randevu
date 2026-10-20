@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Emre Akçınar Hair Studio</title><link rel="icon" href="assets/ea-app-icon.svg" type="image/svg+xml"><script src="vendor/react.production.min.js"></script><script src="vendor/react-dom.production.min.js"></script><script src="customer.js"></script><script src="vendor/dc-runtime.js"></script>
-<script src="notifications.js" defer></script>
+<script src="notifications.js" defer></script><script src="telemetry.js" defer></script>
 </head>
 <body>
 <x-dc>
@@ -69,7 +69,7 @@
             <div style="display:flex;flex-direction:column;gap:10px">
               <span style="font-family:var(--mk-font-mono);font-size:11px;letter-spacing:.16em;color:#3F6B5E">ADIM 1 · HİZMET VE PERSONEL</span>
               <h1 style="margin:0;font-family:var(--mk-font-display);font-weight:600;font-size:32px;line-height:1.08;color:#1F2A2E;text-wrap:balance">NE YAPTIRMAK İSTERSİNİZ?</h1>
-              <p style="margin:0;font-size:15px;line-height:1.55;color:#5B6467">Birden fazla hizmet seçebilirsiniz; toplam süre ve ücret altta güncellenir.</p>
+              <p style="margin:0;font-size:15px;line-height:1.55;color:#5B6467">{{ selectionHint }}</p>
             </div>
             <div role="group" aria-label="Hizmetler" style="display:flex;flex-direction:column;gap:10px">
               <sc-for list="{{ services }}" as="s" hint-placeholder-count="3">
